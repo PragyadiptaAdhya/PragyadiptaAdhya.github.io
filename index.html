@@ -1,629 +1,1269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google Tag Manager -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragyadipta Adhya | Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5BB8W2X');</script>
-  <!-- End Google Tag Manager -->
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --ink-light: #3a3a5c;
+      --ink-muted: #7a7a9a;
+      --paper: #f7f5f0;
+      --paper-warm: #ede9e0;
+      --paper-card: #ffffff;
+      --accent: #2a5298;
+      --accent-light: #4a72b8;
+      --accent-warm: #c0392b;
+      --gold: #b8860b;
+      --border: #ddd9d0;
+      --shadow: rgba(26,26,46,0.08);
+      --shadow-md: rgba(26,26,46,0.14);
+    }
 
-  <title>Personal Website</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    html { scroll-behavior: smooth; font-size: 16px; }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(247,245,240,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+      animation: slideDown 0.6s ease forwards;
+    }
+    @keyframes slideDown { from { transform: translateY(-100%); opacity:0; } to { transform: translateY(0); opacity:1; } }
 
+    .nav-brand {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-brand span { color: var(--accent); }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--accent);
+      transform: scaleX(0); transition: transform 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { transform: scaleX(1); }
 
-    gtag('config', 'UA-169007209-3');
-  </script>
+    .nav-resume {
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-resume:hover { background: var(--accent); color: white; }
 
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 2.5rem 4rem;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-rule {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(42,82,152,0.04) 39px,
+        rgba(42,82,152,0.04) 40px
+      );
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 900px; margin: 0 auto; width: 100%;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.3s ease forwards;
+    }
+    .hero-name {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      opacity: 0; animation: fadeUp 0.7s 0.5s ease forwards;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+
+    .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.35rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin: 1rem 0 1.8rem;
+      opacity: 0; animation: fadeUp 0.7s 0.7s ease forwards;
+    }
+    .hero-summary {
+      font-size: 1.02rem;
+      color: var(--ink-light);
+      max-width: 640px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.9s ease forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.7s 1.1s ease forwards;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: var(--accent); color: white;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+      text-decoration: none; border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      border: 1.5px solid var(--border); color: var(--ink-light);
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+      text-decoration: none; border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    .hero-socials {
+      display: flex; gap: 1.2rem; margin-top: 2rem;
+      opacity: 0; animation: fadeUp 0.7s 1.3s ease forwards;
+    }
+    .hero-socials a {
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%; color: var(--ink-muted);
+      font-size: 0.9rem; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .hero-socials a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 5rem 2.5rem;
+      max-width: 1050px; margin: 0 auto;
+    }
+    .section-alt { background: var(--paper-warm); }
+    .section-alt .section { background: transparent; }
+
+    .section-header {
+      display: flex; align-items: baseline; gap: 1.2rem;
+      margin-bottom: 3rem;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 1rem;
+    }
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem; color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .section-title-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem; font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 240px 1fr;
+      gap: 3.5rem; align-items: start;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-wrap::before {
+      content: ''; position: absolute;
+      top: 10px; left: 10px; right: -10px; bottom: -10px;
+      border: 1.5px solid var(--accent);
+      border-radius: 2px; z-index: 0;
+    }
+    .about-photo {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: 2px; position: relative; z-index: 1;
+      filter: grayscale(15%);
+    }
+    .about-photo-fallback {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--paper-warm), var(--border));
+      border-radius: 2px; position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'EB Garamond', serif; font-size: 3rem; color: var(--accent);
+    }
+    .about-text p { color: var(--ink-light); margin-bottom: 1.2rem; font-size: 1.02rem; }
+    .about-meta {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.6rem; margin-top: 1.8rem;
+    }
+    .about-meta-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.9rem; color: var(--ink-muted);
+    }
+    .about-meta-item i { color: var(--accent); width: 16px; }
+    .about-meta-item a { color: var(--accent); text-decoration: none; }
+    .about-meta-item a:hover { text-decoration: underline; }
+
+    /* ── INTERESTS CHIPS ── */
+    .interests-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.83rem; color: var(--ink-light);
+      background: var(--paper-card);
+      transition: all 0.2s;
+    }
+    .chip i { font-size: 0.8rem; color: var(--accent); }
+    .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 1.5rem; margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .edu-logo {
+      width: 70px; height: 70px; object-fit: contain;
+      border: 1px solid var(--border); border-radius: 4px; padding: 6px;
+      background: white;
+    }
+    .edu-logo-placeholder {
+      width: 70px; height: 70px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: white; font-size: 1.5rem; color: var(--accent);
+    }
+    .edu-info h3 {
+      font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 0.2rem;
+    }
+    .edu-info h3 a { color: var(--accent); text-decoration: none; }
+    .edu-info h3 a:hover { text-decoration: underline; }
+    .edu-degree { font-size: 0.95rem; color: var(--ink-light); font-style: italic; margin-bottom: 0.25rem; }
+    .edu-period {
+      font-family: 'DM Mono', monospace; font-size: 0.75rem;
+      color: var(--ink-muted); letter-spacing: 0.06em;
+      margin-bottom: 0.8rem;
+    }
+    .edu-detail { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 0.3rem; }
+    .edu-courses { font-size: 0.88rem; color: var(--ink-light); }
+    .edu-courses ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
+    .edu-courses li {
+      padding: 0.2rem 0.6rem;
+      background: var(--paper-warm); border: 1px solid var(--border);
+      border-radius: 2px; font-size: 0.8rem; color: var(--ink-muted);
+    }
+    .thesis-note {
+      margin-top: 0.7rem; font-size: 0.88rem;
+      color: var(--ink-light); font-style: italic;
+      border-left: 2px solid var(--accent); padding-left: 0.8rem;
+    }
+    .thesis-note strong { color: var(--ink); font-style: normal; }
+
+    /* ── INTERNSHIPS ── */
+    .intern-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    .intern-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .intern-item::before {
+      content: ''; position: absolute; left: 0; top: 6px;
+      width: 10px; height: 10px;
+      border: 2px solid var(--accent); border-radius: 50%;
+      background: var(--paper);
+    }
+    .intern-item::after {
+      content: ''; position: absolute;
+      left: 4px; top: 20px; bottom: -2.5rem;
+      width: 1px; background: var(--border);
+    }
+    .intern-item:last-child::after { display: none; }
+    .intern-org {
+      font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 600;
+      color: var(--accent); text-decoration: none;
+    }
+    .intern-org:hover { text-decoration: underline; }
+    .intern-period {
+      font-family: 'DM Mono', monospace; font-size: 0.75rem;
+      color: var(--ink-muted); letter-spacing: 0.06em;
+      margin: 0.2rem 0 0.7rem;
+    }
+    .intern-bullets { list-style: none; }
+    .intern-bullets li {
+      font-size: 0.93rem; color: var(--ink-light);
+      padding: 0.25rem 0 0.25rem 1.2rem;
+      position: relative;
+    }
+    .intern-bullets li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.8rem;
+    }
+
+    /* ── RESEARCH ── */
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .research-card {
+      background: var(--paper-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .research-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow-md); }
+    .research-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+    }
+    .research-card.ongoing::before { background: var(--gold); }
+    .research-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px; margin-bottom: 1rem;
+    }
+    .badge-published { background: #e8f0fe; color: var(--accent); }
+    .badge-ongoing { background: #fef9e7; color: var(--gold); }
+    .badge-past { background: #f0f0f0; color: var(--ink-muted); }
+    .research-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 0.6rem; line-height: 1.4;
+    }
+    .research-card p { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 1rem; }
+    .research-card .venue {
+      font-size: 0.8rem; color: var(--ink-light);
+      font-style: italic; border-top: 1px solid var(--border);
+      padding-top: 0.7rem; margin-top: auto;
+    }
+    .research-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+    .research-tag {
+      font-size: 0.73rem; padding: 0.15rem 0.5rem;
+      background: var(--paper-warm); border: 1px solid var(--border);
+      border-radius: 2px; color: var(--ink-muted);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .project-card {
+      background: var(--paper-card);
+      border: 1px solid var(--border); border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow-md); }
+    .project-img {
+      width: 100%; height: 150px; object-fit: cover;
+      background: var(--paper-warm);
+    }
+    .project-img-placeholder {
+      width: 100%; height: 150px;
+      background: linear-gradient(135deg, var(--paper-warm), var(--border));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; color: var(--accent);
+    }
+    .project-body { padding: 1.2rem; }
+    .project-body h4 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem; font-weight: 600; color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .project-body p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.5; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.8rem; }
+    .project-tag {
+      font-size: 0.7rem; padding: 0.12rem 0.45rem;
+      background: var(--paper-warm); border: 1px solid var(--border);
+      border-radius: 2px; color: var(--ink-muted);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .skill-group {
+      background: var(--paper-card);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.5rem;
+    }
+    .skill-group h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .skill-group h4::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .skill-logos { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+    .skill-logo {
+      height: 38px; width: auto; max-width: 90px;
+      filter: grayscale(30%); opacity: 0.85;
+      transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+    }
+    .skill-logo:hover { filter: grayscale(0); opacity: 1; transform: scale(1.08); }
+    .skill-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.3rem 0.7rem; font-size: 0.8rem;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--ink-light); background: var(--paper-warm);
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-item {
+      background: var(--paper-card);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.2rem;
+      display: grid; grid-template-columns: 36px 1fr;
+      gap: 1.2rem; align-items: start;
+      transition: box-shadow 0.2s;
+    }
+    .pub-item:hover { box-shadow: 0 4px 16px var(--shadow); }
+    .pub-num {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.8rem; color: var(--border); line-height: 1; font-style: italic;
+    }
+    .pub-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.08rem; font-weight: 600; color: var(--ink);
+      line-height: 1.4; margin-bottom: 0.35rem;
+    }
+    .pub-authors { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.3rem; }
+    .pub-authors strong { color: var(--ink-light); }
+    .pub-venue { font-size: 0.85rem; color: var(--ink-light); font-style: italic; margin-bottom: 0.6rem; }
+    .pub-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .pub-link {
+      font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.2rem 0.7rem; border: 1px solid var(--border);
+      border-radius: 2px; color: var(--accent); text-decoration: none;
+      transition: all 0.2s;
+    }
+    .pub-link:hover { background: var(--accent); color: white; border-color: var(--accent); }
+    .pub-soon {
+      font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.2rem 0.7rem; border: 1px solid var(--border);
+      border-radius: 2px; color: var(--ink-muted);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+    .contact-card {
+      background: var(--paper-card);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.6rem; display: flex; align-items: flex-start; gap: 1rem;
+      transition: box-shadow 0.2s;
+    }
+    .contact-card:hover { box-shadow: 0 4px 16px var(--shadow); }
+    .contact-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #e8f0fe; border-radius: 4px;
+      color: var(--accent); font-size: 1.1rem;
+    }
+    .contact-card h4 {
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-muted); font-weight: 500; margin-bottom: 0.3rem;
+    }
+    .contact-card p, .contact-card a {
+      font-size: 0.93rem; color: var(--ink-light);
+      text-decoration: none; line-height: 1.5;
+    }
+    .contact-card a:hover { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.4);
+      font-family: 'DM Mono', monospace; letter-spacing: 0.06em;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ── MOBILE HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links, .nav-resume { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { max-width: 220px; margin: 0 auto; }
+      .research-grid, .projects-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero-name { font-size: 2.8rem; }
+      .section { padding: 3.5rem 1.2rem; }
+      nav { padding: 0 1.2rem; }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-
 <body>
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- ======= Header ======= -->
-  <header id="header" class="header-tops">
-    <div class="container">
-      <h1><a href="index.html">Pragyadipta Adhya</a></h1>
-      <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#header"> <span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#education"> <span>Education</span></a></li>
-          <!-- <li><a href="#experience"> <span>Experience</span></a></li> -->
-          <li><a href="#portfolio"> <span>Projects</span></a></li>
-          <li><a href="#skills"> <span>Skills</span></a></li>
-          <li><a href="https://drive.google.com/file/d/14yJyU3QFdm2GrNdi3NBfVt2VS35pcwdr/view?usp=drive_link" target="_blank"> <span>Resume</span></a></li>
-          <!-- <li><a href="https://dev.to/zahidali" target="_blank"> <span>Blog</span></a></li> -->
-          <li><a href="#contacts"> <span>Contact</span></a></li>
-        </ul>
-          <!-- <li><a href="#projects"> <span>Projects</span></a></li> -->
-          <!-- <li><a href="#links"> <span>Resume & Links</span></a></li> -->   
-          <!-- CV Link -->
-          <!-- <li><a href="https://drive.google.com/file/d/10aepDII3nDjLN-egqEtWwUpTNh4a8tDd/view?usp=sharing" target="_blank"> <span>Resume</span></a></li> -->
 
-      </nav><!-- .nav-menu -->
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" href="#hero">Pragyadipta <span>Adhya</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-resume" href="https://drive.google.com/file/d/14yJyU3QFdm2GrNdi3NBfVt2VS35pcwdr/view?usp=drive_link" target="_blank">CV ↗</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-      <!-- Social accounts -->
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/pragyadipta-adhya-93875624a" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/PragyadiptaAdhya" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-        <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in" target="_blank" class="google"><i class="bx bxl-google"></i></a>
-        <!-- <a href="https://zaahidali.medium.com/" target="_blank" class="medium"><i class="bx bxl-medium"></i></a>
-        <a href="https://dev.to/zahidali" target="_blank" class="devto"><i class="bx bxl-dev-to"></i></a> -->
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-rule"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">PhD Student · University of Colorado Boulder</p>
+      <h1 class="hero-name">Pragyadipta<br><em>Adhya</em></h1>
+      <p class="hero-title">Perceptual Quality · Image &amp; Video · 3D Avatar Rendering · Chromatic Distortions</p>
+      <p class="hero-summary">
+        PhD student in the Department of Electrical, Computer and Energy Engineering at the 
+        University of Colorado Boulder, advised by 
+        <a href="https://www.colorado.edu/ecee/al-bovik" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);">Prof. Alan C. Bovik</a>. 
+        My research focuses on perceptual quality assessment of images, videos, and 3D avatar 
+        reconstruction and rendering — with a particular interest in chromatic distortions and 
+        how the human visual system perceives degradations in synthesised and rendered content. 
+        I conduct this research in collaboration with 
+        <a href="https://about.meta.com/realitylabs/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);">Meta Reality Labs</a>.
+      </p>
+      <div class="hero-actions">
+        <a href="#research" class="btn-primary"><i class="fas fa-flask"></i> View Research</a>
+        <a href="#publications" class="btn-outline"><i class="fas fa-scroll"></i> Publications</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/pragyadipta-adhya-93875624a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/PragyadiptaAdhya" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-  </header><!-- End Header -->
-
-
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
-      <div class="section-title">
-        <h2>About</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/IMG_1659.JPG" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <p style="text-align:justify">
-            I am a passionate individual deeply immersed in Deep Learning, Machine Learning, Digital Image Processing, and Computer Vision. 
-            With a strong proficiency in Convolutional Neural Networks (CNNs) and architectural design, I specialize in hyperparameter tuning to extract the best performance from models. 
-            My expertise extends to Digital Image Processing, where I excel in techniques such as filtering, processing, segmentation, and uncovering hidden narratives within pixels. 
-            Beyond my technical prowess, I am defined by my unwavering commitment and relentless work ethic. This personal website offers a glimpse into my journey through the fascinating world of multimedia,
-            data, and beyond. Join me in exploring the endless possibilities at the intersection of technology and creativity.
-
-          </p>
-
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="ri-map-pin-user-fill"></i> <strong>City:</strong> Midnapore, India</li>
-              </ul>
-            </div>
-
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="ri-mail-open-fill"></i> <strong>Email:</strong> pragyadipta.adhya@kgpian.iitkgp.ac.in</li>
-              </ul>
-
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-    </div><!-- End About Me -->
-    <!-- ======= Interests ======= -->
-    <!-- Link for icons -->
-    <!-- https://coderthemes.com/minton/layouts/default/icons-remix.html -->
-
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <!-- <i class="ri-global-line" style="color: #ffbb2c;"></i> -->
-            <i class="fas fa-brain" style="color: #5578ff;"></i>
-            <h3>Naural Networks</h3>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="fas fa-eye" style="color: #47aeff;"></i>
-            <h3> Computer Vision </h3>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-              <i class="fas fa-robot" style="color: ##a43fe7;"></i>
-            <h3>Generative AI</h3>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="fab fa-youtube" style="color: #e80368;"></i>
-            <h3>Multimedia Codecs</h3>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-cpu-line" style="color: #5578ff;"></i>
-            <h3>Machine Learning</h3>
-          </div>
-        </div>
-
-        <!-- <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-base-station-line" style="color: #f1081f;"></i>
-            <h3>Internet of Things</h3>
-          </div>
-        </div>
-
-
-        
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-image-line" style="color: #ffc107;"></i>
-            <h3>Image Processing</h3>
-          </div>
-        </div> -->
-      </div>
-
-    </div><!-- End Interests -->
-  </section><!-- End About Section -->
-
-
-<!-- Education Section Starts -->
-  <section id="education" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Education</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
-
-          <!-- HITK -->
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/Heritage_Institute_of_Kolkata_Logo.png"   alt=""  width="300" height="300">
-              <h4 style="text-align:left;"><a href="https://www.heritageit.edu/" target="_blank" style="color:#12d640"> Heritage Institute of Technology, Kolkata</a><br> </h4>
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>B.Tech in Electronics and Communication Engineering</em></p> <p style="text-align: right;">
-              <h5 style="text-align:left;padding: 0px 10px;">2017 - 2021</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Signals and Systems</li>
-                <li>Control Systems</li>
-                <li>Digital Signal Processing</li>
-                <li>Microproessors and Microcontrollers</li>
-                <li>Object Oriented Programming</li>
-              </ul>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Thesis</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li> <b><i>Quantitative Analysis of Emotion using Color and Audio Stimuli</b></i></li>
-              </ul>
-            </div>
-                        
-            <!-- IIT KGP -->
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/iitlogo.png" class="img-fluid" alt=""  width="300" height="240">
-              <h4 style="text-align:left;"><a href="https://www.iitkgp.ac.in/" target="_blank" style="color:#12d640">Indian Institute of Technology Kharagpur</a><br> </h4>
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>M.Tech in Sigal Processing and Machine Learning </em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">2022 - 2024</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Digital Image Processing</li>
-                <li>Deep Learning</li>
-                <li>Machine Learning for Signal Proessing</li>
-                <li>Linear Algebra for Signals and Systems</li>
-                <li>Probability &Random Processes</li>
-                
-              </ul>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Thesis</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li> <b><i>Deep Neural Network based Codec for Versatile Image and Video I-frame Compression</b></i></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- PIAIC Section -->
-        <div class="container">
-          <div class="section-title">
-            <h2>Courses</h2>
-          </div>
-          <div class="row">
-            <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
-              
-              <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-                <img src="assets/img/education/nielit_logo.jpg" class="img-fluid" alt="">
-                <h4 style="text-align:left;"><a href="https://nielit.gov.in/kolkata/index.php" target="_blank" style="color:#12d640">NIELIT</a><br> </h4>
-                <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>Certificate Course in Java and Oracle</em></p>
-                <h5 style="text-align:left;padding: 0px 10px;">2018 - 2019</h5>
-                <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-                <ul style="text-align:left;color:#fff;">
-                  <li>OOP using JAVA</li>
-                  <li>Database Managment using MYSQL</li>
-                </ul>
-              </div>
-  
-            </div>
-          </div>
-        </div>  
-
-
-<!-- Certification Area Starts Here -->
-    <div class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Internships</h2> 
-      </div>
-
-      <!-- Python, Google IT Support, IBM Machine Learning, ICSI Network Security, Basic GAN, Bootstrap and Git-->
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
-
-          <!-- IMSciences -->
-          <!-- IIT KGP -->
-          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              
-              <h4 style="text-align:left;"><a href="https://www.iitkgp.ac.in/" target="_blank" style="color:#12d640"> Research Internship at Indian Institute of Technology Kharagpur, Kharagpur</a><br> </h4>
-              <h5 style="text-align:left;padding: 0px 10px;">January 2022 - June 2022</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Work Done</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Developed flexible sensors for point-of-care diagnostics.</li>
-                <li>Meticulously mapped the sensor’s temperature and pressure characteristics.</li>
-                <li>Integrated the sensors with smart technology, allowing seamless monitoring via Bluetooth.</li>
-              </ul>
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <!-- <img src="assets/img/education/Heritage_Institute_of_Kolkata_Logo.png"   alt=""  width="300" height="300"> -->
-              <h4 style="text-align:left;"><a href="https://www.ardentcollaborations.com/" target="_blank" style="color:#12d640"> Ardent Computech Pvt. Ltd., Kolkata</a><br> </h4>
-              <h5 style="text-align:left;padding: 0px 10px;">May 2020 - June 2020</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Work Done</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Spearheaded a team of three to forge a robust insurance fraud detection system, leveraging real-time claim data.</li>
-                <li>Employed Decision Trees, Random Forest & CNNs to benchmark their effectiveness.</li>
-                <li>Ensured precision &reliability by using cutting-edge techniques, resulting in an enhanced fraud detection system.</li>
-              </ul>
-            </div>
-                        
-            <!-- ismriti iitk -->
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <!-- <img src="assets/img/education/iitlogo.png" class="img-fluid" alt=""  width="300" height="240"> -->
-              <h4 style="text-align:left;"><a href="https://iitk.ac.in/new/data/iitk/" target="_blank" style="color:#12d640">Internship Programme at Indian Institute of Technology (IIT) Kanpur</a><br> </h4>
-              <h5 style="text-align:left;padding: 0px 10px;">June 2019 - July 2019</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Workdone</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Devised NLP tool merging Page Rank Algorithm &DNNs for concise text summarization.</li>
-                <li>Adaptability to various lengths, ensuring essential content. </li>
-                <li>Introduced inventive solution, significantly cutting email review time &elevating operational efficiency.</li>
-              </ul>
-
-            </div>
-
-          </div>
   </section>
-  <!-- End Education Section -->
 
-
-  <!-- End Experience Section
-
-
-  <!-- Start Projects Section -->
-   <section id="portfolio" class="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Software Projects </h2>
-      </div> 
-
-      <!-- <div class="section-title">
-        <h2>Current Stack: Go, Rails, TypeScript, React, GraphQL, NextJS, and PostgreSQL</h2>
-      </div> -->
-
-      <div class="row portfolio-container">
-        <!-- Project 9: Unicron Gallery  -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Multimedia Compression</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/projects/dvic.jpg" class="img-fluid" alt="" style="width: 1170px; height: 160px;">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects_details/dvic.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Sentiment Analysis</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/projects/emotion_analysis.jpg" class="img-fluid" alt="" style="width: 1170px; height: 160px;">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects_details/sentiment_analysis.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Image Deblurring</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/projects/deblurring_icon.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects_details/image_deblurring.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Text Summariser</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/projects/summary.webp" class="img-fluid" alt="" style="width: 1170px; height: 160px;">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects_details/text_summary.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Insurance Claim Detection</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/projects/insurance.jpg" class="img-fluid" alt="" style="width: 1170px; height: 160px;">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects_details/insurance.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br/>
-      <!-- Deep Learning Projects -->
-      
+  <!-- ABOUT -->
+  <div class="section-alt">
+  <section id="about" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">01</span>
+      <h2 class="section-title-text">About Me</h2>
     </div>
-  </section> 
-  <!-- End Projects Section -->
-
-  <!-- Start Skills Section -->
-  <section id="skills" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Skills</h2>
+    <div class="about-grid reveal">
+      <div class="about-photo-wrap">
+        <img src="assets/img/profile.jpg" alt="Pragyadipta Adhya" class="about-photo"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="about-photo-fallback" style="display:none">PA</div>
       </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up">
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Languages</h4>
-                <p style="text-align:left;">
-                  <!-- Ruby on Rails, Go, Python, Java, C, C++, CSS, HTML -->
-                  <!-- <img src="https://www.vectorlogo.zone/logos/ruby-lang/ruby-lang-horizontal.svg" alt="Ruby on Rails" height="50" width="150"> -->
-                  <!-- <img src="https://www.vectorlogo.zone/logos/golang/golang-icon.svg" alt="Go" height="50" width="50"> -->
-                  <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="Python" height="50" width="150">
-                  <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="Java" height="50" width="120">
-                  <!-- <img src="https://cdn.worldvectorlogo.com/logos/c.svg" alt="C" height="50" width="50"> -->
-                  <img src="https://img.icons8.com/color/100/000000/c-programming.png" alt="C++" height="60" width="60">
-                  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" height="60" width="60"> -->
-                  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML" height="50" width="150">
-                </p>
-            </div>
-
-
-            <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Databases</h4>
-                  <p style="text-align:left;">
-                    <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-ar21.svg" alt="upload.wikimedia.org" height="60" width="90">
-                    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="vectorlogo.zone" height="70" width="130">
-                    <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="vectorlogo.zone" height="60" width="130">  -->
-                    <!-- https://www.clustox.com/ check this one                 -->
-                  <!-- </p>
-              </div> -->
-  
-            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Frameworks and Mathematical Packages</h4>
-                <p style="text-align:left;">
-                  <!-- Bootstrap, Matlab, TensorFlow, PyTorch, OpenCV, Scikit-Learn -->
-                  <!-- <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="vectorlogo.zone"> -->
-                  <!-- <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="vectorlogo.zone"> -->
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="vectorlogo.zone" height="50" width="90">
-                  <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2017/01/04015019/plotly_logo.png" alt="vectorlogo.zone" height="50" width="90">
-                  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Ruby_On_Rails_Logo.svg" height="90" width="90" alt="vectorlogo.zone"> -->
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="upload.wikimedia.org" width="90" height="70">
-              </p>
-          </div>
-
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Microcontroller Boards</h4>
-              <p style="text-align:left;">
-                <!-- Arduino, Raspberry pi -->
-                <img src="https://www.vectorlogo.zone/logos/arduino/arduino-ar21.svg" alt="vectorlogo.zone" height="50" width="90">
-                <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" alt="vectorlogo.zone" height="80" width="125">
-            </p>
+      <div class="about-text">
+        <p>
+          I am a <strong>PhD student</strong> in the Department of Electrical, Computer and Energy Engineering 
+          at the <strong>University of Colorado Boulder</strong>, working under the supervision of 
+          <a href="https://www.colorado.edu/ecee/al-bovik" target="_blank" style="color:var(--accent);">Prof. Alan C. Bovik</a>. 
+          My current research focuses on <strong>perceptual quality assessment</strong> of images, videos, 
+          and 3D avatar reconstruction and rendering, with a particular emphasis on <strong>chromatic distortions</strong> 
+          and how the human visual system responds to colour and quality degradations in synthesised content.
+          This research is conducted in collaboration with <strong><a href="https://about.meta.com/realitylabs/" target="_blank" style="color:var(--accent);">Meta Reality Labs</a></strong>.
+        </p>
+        <p>
+          I hold an M.Tech in Signal Processing and Machine Learning from <strong>IIT Kharagpur</strong>, where my 
+          thesis developed a deep neural network-based codec for versatile image and video I-frame compression. 
+          Prior to that, I completed a B.Tech in Electronics and Communication Engineering from 
+          <strong>Heritage Institute of Technology, Kolkata</strong>. My background spans convolutional neural 
+          networks, generative models, digital image processing, and learned compression.
+        </p>
+        <p>
+          I am broadly interested in understanding how machines and humans perceive visual quality — 
+          particularly in the context of emerging 3D content, avatar rendering pipelines, and the 
+          perceptual effects of colour and structural distortions.
+        </p>
+        <div class="about-meta">
+          <div class="about-meta-item"><i class="fas fa-map-marker-alt"></i> Midnapore, West Bengal, India</div>
+          <div class="about-meta-item"><i class="fas fa-envelope"></i> <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in">Email me</a></div>
+          <div class="about-meta-item"><i class="fab fa-github"></i> <a href="https://github.com/PragyadiptaAdhya" target="_blank">PragyadiptaAdhya</a></div>
+          <div class="about-meta-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/pragyadipta-adhya-93875624a" target="_blank">LinkedIn</a></div>
         </div>
 
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Tools and CMS</h4>
-                <p style="text-align:left;">
-                  <!-- Git, GitHub, Jupyter, Wordpress -->
-                  <!-- Will be adding Heroku, Flash and Django -->
-                  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="vectorlogo.zone">
-                  <!-- <img src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg" alt="vectorlogo.zone"> -->
-                  <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="vectorlogo.zone">
-                  <!-- <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="vectorlogo.zone"> -->
-                  <img src="https://www.vectorlogo.zone/logos/wordpress/wordpress-ar21.svg" alt="vectorlogo.zone" height="55" width="115">
-              </p>
-          </div>
-          <!-- Microsoft Azure, Google Cloud and Amazon AWS -->
-          <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Microsoft Technologies</h4>
-              <p style="text-align:left;">
-                <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="vectorlogo.zone">
-                <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-ar21.svg" alt="vectorlogo.zone">
-                <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="vectorlogo.zone">
-            </p>
-          </div> -->
+        <div class="interests-row">
+          <span class="chip"><i class="fas fa-eye"></i> Perceptual Quality Assessment</span>
+          <span class="chip"><i class="fas fa-film"></i> Image &amp; Video Quality</span>
+          <span class="chip"><i class="fas fa-cube"></i> 3D Avatar Rendering</span>
+          <span class="chip"><i class="fas fa-palette"></i> Chromatic Distortions</span>
+          <span class="chip"><i class="fas fa-brain"></i> Deep Learning</span>
+          <span class="chip"><i class="fas fa-compress-arrows-alt"></i> Learned Compression</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
 
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">02</span>
+      <h2 class="section-title-text">Education</h2>
+    </div>
+
+    <div class="edu-item reveal">
+      <div class="edu-logo-placeholder"><i class="fas fa-university"></i></div>
+      <div class="edu-info">
+        <h3><a href="https://www.colorado.edu/" target="_blank">University of Colorado Boulder</a></h3>
+        <p class="edu-degree">PhD in Electrical, Computer and Energy Engineering</p>
+        <p class="edu-period">2024 — Present</p>
+        <div class="edu-courses">
+          <span class="edu-detail">Advisor:</span>
+          <ul>
+            <li><a href="https://www.colorado.edu/ecee/al-bovik" target="_blank" style="color:var(--accent);text-decoration:none;">Prof. Alan C. Bovik</a></li>
+          </ul>
+        </div>
+        <div class="thesis-note" style="border-color:var(--gold);">
+          <strong>Research Focus:</strong> Perceptual quality of images, videos &amp; 3D avatar reconstruction/rendering; chromatic distortions; human visual perception
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-item reveal">
+      <img src="assets/img/education/iitlogo.png" alt="IIT KGP" class="edu-logo"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="edu-logo-placeholder" style="display:none"><i class="fas fa-university"></i></div>
+      <div class="edu-info">
+        <h3><a href="https://www.iitkgp.ac.in/" target="_blank">Indian Institute of Technology Kharagpur</a></h3>
+        <p class="edu-degree">M.Tech in Signal Processing and Machine Learning</p>
+        <p class="edu-period">2022 — 2024</p>
+        <div class="edu-courses">
+          <span class="edu-detail">Relevant Coursework:</span>
+          <ul>
+            <li>Digital Image Processing</li>
+            <li>Deep Learning</li>
+            <li>ML for Signal Processing</li>
+            <li>Linear Algebra for Signals &amp; Systems</li>
+            <li>Probability &amp; Random Processes</li>
+          </ul>
+        </div>
+        <div class="thesis-note">
+          <strong>Thesis:</strong> Deep Neural Network based Codec for Versatile Image and Video I-frame Compression
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-item reveal">
+      <img src="assets/img/education/Heritage_Institute_of_Kolkata_Logo.png" alt="HITK" class="edu-logo"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="edu-logo-placeholder" style="display:none"><i class="fas fa-university"></i></div>
+      <div class="edu-info">
+        <h3><a href="https://www.heritageit.edu/" target="_blank">Heritage Institute of Technology, Kolkata</a></h3>
+        <p class="edu-degree">B.Tech in Electronics and Communication Engineering</p>
+        <p class="edu-period">2017 — 2021</p>
+        <div class="edu-courses">
+          <span class="edu-detail">Relevant Coursework:</span>
+          <ul>
+            <li>Signals and Systems</li>
+            <li>Control Systems</li>
+            <li>Digital Signal Processing</li>
+            <li>Microprocessors &amp; Microcontrollers</li>
+            <li>Object Oriented Programming</li>
+          </ul>
+        </div>
+        <div class="thesis-note">
+          <strong>Thesis:</strong> Quantitative Analysis of Emotion using Color and Audio Stimuli
         </div>
       </div>
     </div>
   </section>
 
-  <!-- End Skills Section -->
-
-  <!-- Start Links section -->
- 
-  <!-- <section id="links" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Resume & Links</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://drive.google.com/file/d/10aepDII3nDjLN-egqEtWwUpTNh4a8tDd/view?usp=sharing" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://drive.google.com/file/d/10aepDII3nDjLN-egqEtWwUpTNh4a8tDd/view?usp=sharing" target="_blank">Resume</a></h4>
-          <p class="description" style="color:#fff;">The link contains downloadable resume</p>
-        </div> -->
-        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
-          <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank"><div class="icon"><i class="icofont-link"></i></div></a>
-          <h4 class="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank">LeetCode Repository</a></h4>
-          <p class="description" style="color:#fff;"> The github repository contains leetcode problems solution in python.</p>
-        </div> -->
-        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://techingenious.herokuapp.com/" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://techingenious.herokuapp.com/" target="_blank">Blog</a></h4>
-          <p class="description" style="color:#fff;">Blog containing articles on AI, coding, development</p>
-        </div> -->
-      <!-- </div>
+  <!-- CERTIFICATIONS -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-header reveal">
+      <span class="section-number" style="color:var(--gold);">✦</span>
+      <h2 class="section-title-text" style="font-size:1.4rem;">Certifications</h2>
     </div>
- 
-  </section> End Links Section -->
-
-
-  <!-- Start Contact Section -->
-
-  <section id="contacts" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem;">
+      <div class="contact-card reveal" style="flex:1;min-width:220px;">
+        <div class="contact-icon" style="background:#fff8e1;color:var(--gold);"><i class="fas fa-certificate"></i></div>
+        <div>
+          <h4>NIELIT Kolkata</h4>
+          <p style="font-size:0.9rem;color:var(--ink-light);">Certificate in Java &amp; Oracle</p>
+          <p style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--ink-muted);margin-top:0.2rem;">2018 — 2019 · OOP with Java, MySQL</p>
+        </div>
       </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-           <p>21, Chotobazar,
-             <p> Near Rashmayrar Chawk.
-           <p>Midnapore.</p>
-            <p>West Bengal, India.</p> 
-            <p>PIN- 721101</p>
-           </p> 
-          </div>
+      <div class="contact-card reveal" style="flex:1;min-width:220px;opacity:0.6;">
+        <div class="contact-icon" style="background:#f0f0f0;color:var(--ink-muted);"><i class="fas fa-plus"></i></div>
+        <div>
+          <h4 style="color:var(--ink-muted);">Add More Certifications</h4>
+          <p style="font-size:0.85rem;color:var(--ink-muted);">You can add your other certifications here (Coursera, Google, IBM, etc.)</p>
         </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/pragyadipta-adhya-93875624a" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/PragyadiptaAdhya" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-              <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in" target="_blank" class="google"><i class="bx bxl-google"></i></a>
-              <!-- <a href="https://studentambassadors.microsoft.com/en-US/profile/49557" target="_blank" class="google"><i class="bx bxl-microsoft"></i></a>
-              <a href="https://awscommunity.pk/" target="_blank" class="amazon_aws"><i class="bx bxl-amazon"></i></a> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
-            <p>pragyadipta.adhya@kgpian.iitkgp.ac.in</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Contact</h3>
-            <p>+91 9641366903</p>
-          </div>
-        </div>
-
-
-<!-- In other profiles section one can add Stackoverflow profile etc. -->
-       
-
       </div>
     </div>
   </section>
-  <!-- End Contact Section -->
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["DL and ML Enthusiast", "in love with Computer Vision", "keen to know about colour spaces and point clouds", "excited to know more about how a machine sees the world"],
-      loop: true,
-      typeSpeed: 65,
-      backSpeed: 65
+  <!-- INTERNSHIPS -->
+  <div class="section-alt">
+  <section id="internships" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">03</span>
+      <h2 class="section-title-text">Internships</h2>
+    </div>
+
+    <div class="intern-item reveal">
+      <a class="intern-org" href="https://www.iitkgp.ac.in/" target="_blank">Research Internship — IIT Kharagpur</a>
+      <p class="intern-period">January 2022 — June 2022</p>
+      <ul class="intern-bullets">
+        <li>Developed flexible sensors for point-of-care diagnostics.</li>
+        <li>Meticulously mapped the sensor's temperature and pressure characteristics.</li>
+        <li>Integrated sensors with smart technology, enabling seamless monitoring via Bluetooth.</li>
+      </ul>
+    </div>
+
+    <div class="intern-item reveal">
+      <a class="intern-org" href="https://www.ardentcollaborations.com/" target="_blank">Ardent Computech Pvt. Ltd., Kolkata</a>
+      <p class="intern-period">May 2020 — June 2020</p>
+      <ul class="intern-bullets">
+        <li>Led a team of three to build a robust insurance fraud detection system leveraging real-time claim data.</li>
+        <li>Benchmarked Decision Trees, Random Forest, and CNNs for classification effectiveness.</li>
+        <li>Delivered an enhanced fraud detection pipeline with improved precision and reliability.</li>
+      </ul>
+    </div>
+
+    <div class="intern-item reveal">
+      <a class="intern-org" href="https://iitk.ac.in/" target="_blank">Internship Programme — IIT Kanpur</a>
+      <p class="intern-period">June 2019 — July 2019</p>
+      <ul class="intern-bullets">
+        <li>Devised an NLP tool merging PageRank Algorithm and DNNs for concise text summarisation.</li>
+        <li>Ensured adaptability to various document lengths while preserving essential content.</li>
+        <li>Significantly reduced email review time and elevated operational efficiency.</li>
+      </ul>
+    </div>
+  </section>
+  </div>
+
+  <!-- RESEARCH -->
+  <section id="research" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">04</span>
+      <h2 class="section-title-text">Research</h2>
+    </div>
+    <div class="research-grid">
+
+      <div class="research-card ongoing reveal">
+        <span class="research-badge badge-ongoing">Ongoing — PhD</span>
+        <h3>Perceptual Quality Assessment of Images, Videos &amp; 3D Avatar Rendering</h3>
+        <p>Investigating how humans perceive quality degradations in synthesised and rendered visual content — including images, video sequences, and 3D avatar reconstruction pipelines. Research examines chromatic distortions, structural artefacts, and the role of the human visual system in evaluating rendered content quality.</p>
+        <div class="research-tags">
+          <span class="research-tag">Perceptual Quality</span>
+          <span class="research-tag">3D Avatar Rendering</span>
+          <span class="research-tag">Chromatic Distortions</span>
+          <span class="research-tag">Human Visual System</span>
+          <span class="research-tag">Video Quality</span>
+        </div>
+        <div class="venue">
+          PhD Research · University of Colorado Boulder · Advisor: Prof. Alan C. Bovik<br>
+          <span style="margin-top:0.4rem;display:inline-flex;align-items:center;gap:0.4rem;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/120px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" style="height:14px;vertical-align:middle;opacity:0.8;">
+            <span>In collaboration with Meta Reality Labs</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="research-card reveal">
+        <span class="research-badge badge-past">Completed — M.Tech Thesis</span>
+        <h3>Deep Neural Network Codec for Versatile Image &amp; Video I-frame Compression</h3>
+        <p>Designed an end-to-end learned compression framework for versatile I-frame coding, outperforming classical codecs (HEVC/VVC) in rate-distortion performance. Explored hyperprior models, attention mechanisms, and learned entropy coding.</p>
+        <div class="research-tags">
+          <span class="research-tag">Learned Compression</span>
+          <span class="research-tag">Generative Models</span>
+          <span class="research-tag">Rate-Distortion</span>
+          <span class="research-tag">PyTorch</span>
+        </div>
+        <div class="venue">M.Tech Thesis · IIT Kharagpur, 2022–2024</div>
+      </div>
+
+      <div class="research-card reveal">
+        <span class="research-badge badge-past">Completed — B.Tech Thesis</span>
+        <h3>Quantitative Analysis of Emotion using Colour and Audio Stimuli</h3>
+        <p>Investigated the correlation between emotional responses and multi-modal stimuli using signal processing and deep learning. Proposed a CNN-based framework for emotion quantification from colour and audio features.</p>
+        <div class="research-tags">
+          <span class="research-tag">Affective Computing</span>
+          <span class="research-tag">Multimodal</span>
+          <span class="research-tag">CNN</span>
+          <span class="research-tag">Signal Processing</span>
+        </div>
+        <div class="venue">B.Tech Thesis · Heritage Institute of Technology</div>
+      </div>
+
+      <div class="research-card reveal">
+        <span class="research-badge badge-past">Completed</span>
+        <h3>Flexible Sensor Development for Point-of-Care Diagnostics</h3>
+        <p>Developed flexible sensors characterised for temperature and pressure, integrated with Bluetooth-enabled smart technology for remote health monitoring applications.</p>
+        <div class="research-tags">
+          <span class="research-tag">IoT</span>
+          <span class="research-tag">Sensors</span>
+          <span class="research-tag">Bluetooth</span>
+          <span class="research-tag">Healthcare</span>
+        </div>
+        <div class="venue">Research Internship · IIT Kharagpur, 2022</div>
+      </div>
+
+      <div class="research-card reveal">
+        <span class="research-badge badge-past">Completed</span>
+        <h3>Insurance Fraud Detection via Ensemble & Deep Learning</h3>
+        <p>Built a fraud detection pipeline using Decision Trees, Random Forests, and CNNs on real insurance claim data. Benchmarked model performance across multiple classifiers with focus on precision and recall.</p>
+        <div class="research-tags">
+          <span class="research-tag">Machine Learning</span>
+          <span class="research-tag">Ensemble Methods</span>
+          <span class="research-tag">CNN</span>
+          <span class="research-tag">Fraud Detection</span>
+        </div>
+        <div class="venue">Industry Internship · Ardent Computech, 2020</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <div class="section-alt">
+  <section id="projects" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">05</span>
+      <h2 class="section-title-text">Software Projects</h2>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Deep Learning / Vision Projects -->
+      <div class="project-card reveal">
+        <img src="assets/img/projects/dvic.jpg" alt="DVIC" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-film"></i></div>
+        <div class="project-body">
+          <h4>Deep Neural Network Codec (DVIC)</h4>
+          <p>Convolutional autoencoder for versatile image &amp; video I-frame compression using channel ordinal learning and variable output resolution.</p>
+          <div class="project-tags">
+            <span class="project-tag">PyTorch</span><span class="project-tag">Compression</span><span class="project-tag">Autoencoder</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/deblurring_icon.png" alt="Image Deblurring" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-image"></i></div>
+        <div class="project-body">
+          <h4>Convolutional Deblurring for Natural Images</h4>
+          <p>Image restoration using Gaussian low-pass filtering, Point Spread Functions, edge deblurring, and convolution-based techniques.</p>
+          <div class="project-tags">
+            <span class="project-tag">Image Processing</span><span class="project-tag">PSF</span><span class="project-tag">OpenCV</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/emotion_analysis.jpg" alt="Emotion Analysis" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-smile"></i></div>
+        <div class="project-body">
+          <h4>Emotion Analysis via Colour &amp; Audio Stimuli</h4>
+          <p>Quantitative framework using Decision Trees, Random Forest, and FCNNs to measure emotional response from multimodal inputs via FaceWeb.</p>
+          <div class="project-tags">
+            <span class="project-tag">Affective Computing</span><span class="project-tag">FCNN</span><span class="project-tag">Multimodal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/american_sign_language.jpg" alt="ASL" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-hand-paper"></i></div>
+        <div class="project-body">
+          <h4>American Sign Language Classifier</h4>
+          <p>CNN-based ASL gesture recognition with data augmentation and TensorFlow/Keras, achieving frame-level hand-sign classification.</p>
+          <div class="project-tags">
+            <span class="project-tag">CNN</span><span class="project-tag">Data Augmentation</span><span class="project-tag">Keras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/rock_paper_scissors.jpg" alt="Rock Paper Scissors" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-hand-rock"></i></div>
+        <div class="project-body">
+          <h4>Rock Paper Scissors Classifier</h4>
+          <p>Deep learning classifier with dropout regularisation and data augmentation to recognise hand gestures in real time.</p>
+          <div class="project-tags">
+            <span class="project-tag">TensorFlow</span><span class="project-tag">Dropout</span><span class="project-tag">Augmentation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/classification.jpg" alt="Cats vs Dogs" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-paw"></i></div>
+        <div class="project-body">
+          <h4>Cats vs Dogs Classifier</h4>
+          <p>Transfer learning using pre-trained InceptionV3 with data augmentation and dropout regularisation for binary image classification.</p>
+          <div class="project-tags">
+            <span class="project-tag">Transfer Learning</span><span class="project-tag">InceptionV3</span><span class="project-tag">Keras</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAN Projects -->
+      <div class="project-card reveal">
+        <img src="assets/img/projects/gan.jpg" alt="GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-project-diagram"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — Vanilla GAN</h4>
+          <p>Generative Adversarial Network with Generator/Discriminator pair, batch normalisation, and transpose convolution for MNIST digit synthesis.</p>
+          <div class="project-tags">
+            <span class="project-tag">GAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Generative</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/dc_gan.jpg" alt="DC-GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-layer-group"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — DC-GAN</h4>
+          <p>Deep Convolutional GAN using transpose convolution, batch normalisation and a deep discriminator architecture for improved image fidelity.</p>
+          <div class="project-tags">
+            <span class="project-tag">DCGAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Conv</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/c_gan.jpg" alt="C-GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-sliders-h"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — Conditional GAN</h4>
+          <p>C-GAN conditioned on class labels for targeted digit generation; uses batch norm, transpose convolution, and class-conditional discriminator.</p>
+          <div class="project-tags">
+            <span class="project-tag">C-GAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Conditional</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/w_gan.jpg" alt="W-GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-wave-square"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — Wasserstein GAN</h4>
+          <p>W-GAN with gradient penalty to prevent mode collapse; uses Wasserstein loss and a Critic network instead of a traditional discriminator.</p>
+          <div class="project-tags">
+            <span class="project-tag">WGAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Gradient Penalty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NLP Projects -->
+      <div class="project-card reveal">
+        <img src="assets/img/projects/summary.webp" alt="Text Summariser" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-align-left"></i></div>
+        <div class="project-body">
+          <h4>Extractive Text Summariser</h4>
+          <p>NLP pipeline merging Skip-gram word vectors, PageRank algorithm, and a FCNN to generate concise extractive document summaries.</p>
+          <div class="project-tags">
+            <span class="project-tag">NLP</span><span class="project-tag">PageRank</span><span class="project-tag">Skip-gram</span>
+          </div>
+          <div style="margin-top:0.6rem;">
+            <a href="https://github.com/PragyadiptaAdhya/Extractive_Text_Summariser" target="_blank" style="font-size:0.75rem;color:var(--accent);text-decoration:none;border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:2px;"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/nlp.jpg" alt="Text Classification" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-tags"></i></div>
+        <div class="project-body">
+          <h4>Text Classification (NLP)</h4>
+          <p>Sequence classification using word embeddings, tokenisation, and padded sequences, with visualisation via TensorFlow Projector.</p>
+          <div class="project-tags">
+            <span class="project-tag">Word Embeddings</span><span class="project-tag">TensorFlow</span><span class="project-tag">NLP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ML Projects -->
+      <div class="project-card reveal">
+        <img src="assets/img/projects/insurance.jpg" alt="Insurance Fraud" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-shield-alt"></i></div>
+        <div class="project-body">
+          <h4>Insurance Fraud Detection</h4>
+          <p>Real-time fraud detection pipeline on insurance claim data using Decision Trees, Random Forest, and CNNs benchmarked for precision and recall.</p>
+          <div class="project-tags">
+            <span class="project-tag">Random Forest</span><span class="project-tag">CNN</span><span class="project-tag">Sklearn</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">06</span>
+      <h2 class="section-title-text">Skills</h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-group reveal">
+        <h4><i class="fas fa-code"></i> Languages</h4>
+        <div class="skill-logos">
+          <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="Python" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="Java" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5" class="skill-logo">
+          <span class="skill-badge"><i class="fas fa-code"></i> C / C++</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h4><i class="fas fa-layer-group"></i> Frameworks & Libraries</h4>
+        <div class="skill-logos">
+          <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg" alt="TensorFlow" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" alt="PyTorch" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="OpenCV" class="skill-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn" class="skill-logo">
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h4><i class="fas fa-tools"></i> Tools & Platforms</h4>
+        <div class="skill-logos">
+          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" alt="Git" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="GitHub" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="Jupyter" class="skill-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB" class="skill-logo">
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h4><i class="fas fa-microchip"></i> Hardware & Embedded</h4>
+        <div class="skill-logos">
+          <img src="https://www.vectorlogo.zone/logos/arduino/arduino-ar21.svg" alt="Arduino" class="skill-logo">
+          <img src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" alt="Raspberry Pi" class="skill-logo">
+          <span class="skill-badge"><i class="fas fa-broadcast-tower"></i> Bluetooth / IoT</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <div class="section-alt">
+  <section id="publications" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">07</span>
+      <h2 class="section-title-text">Publications</h2>
+    </div>
+
+    <div class="pub-item reveal">
+      <div class="pub-num">1</div>
+      <div>
+        <p class="pub-title"><!-- Add your published paper title here -->[Publication Title — Please Update]</p>
+        <p class="pub-authors"><strong>Pragyadipta Adhya</strong>, et al.</p>
+        <p class="pub-venue"><!-- Add venue / journal / conference name and year --></p>
+        <div class="pub-actions">
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> Paper</a>
+          <a href="#" class="pub-link"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal">
+      <div class="pub-num">2</div>
+      <div>
+        <p class="pub-title">[Upcoming Publication Title — In Preparation]</p>
+        <p class="pub-authors"><strong>Pragyadipta Adhya</strong>, et al.</p>
+        <p class="pub-venue">Expected submission — 2025</p>
+        <div class="pub-actions">
+          <span class="pub-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">08</span>
+      <h2 class="section-title-text">Contact</h2>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in">pragyadipta.adhya@kgpian.iitkgp.ac.in</a>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 96413 66903</p>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4>Address</h4>
+          <p>21 Chotobazar, Near Rashmayrar Chawk,<br>Midnapore, West Bengal — 721101, India</p>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-share-alt"></i></div>
+        <div>
+          <h4>Social Profiles</h4>
+          <div style="display:flex; gap:0.8rem; margin-top:0.4rem;">
+            <a href="https://www.linkedin.com/in/pragyadipta-adhya-93875624a" target="_blank" style="color:var(--accent); font-size:1.3rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/PragyadiptaAdhya" target="_blank" style="color:var(--ink); font-size:1.3rem;"><i class="fab fa-github"></i></a>
+            <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in" style="color:#ea4335; font-size:1.3rem;"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Pragyadipta Adhya · Built for academic and professional use · <a href="https://github.com/PragyadiptaAdhya" target="_blank">GitHub ↗</a></p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+      });
+    });
+
+    // Mobile menu (basic toggle — extend as needed)
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const nl = document.querySelector('.nav-links');
+      if (nl.style.display === 'flex') {
+        nl.style.display = 'none';
+      } else {
+        nl.style.display = 'flex';
+        nl.style.flexDirection = 'column';
+        nl.style.position = 'absolute';
+        nl.style.top = '64px';
+        nl.style.left = '0'; nl.style.right = '0';
+        nl.style.background = 'var(--paper)';
+        nl.style.padding = '1rem 2rem 2rem';
+        nl.style.borderBottom = '1px solid var(--border)';
+        nl.style.gap = '1.2rem';
+      }
     });
   </script>
-
-  <!-- Main JS File for the Website-->
-  <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
