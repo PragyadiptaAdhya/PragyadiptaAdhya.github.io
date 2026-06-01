@@ -577,13 +577,14 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="nav-resume" href="https://drive.google.com/file/d/1bbKrwMp5QaviPJHEp9sCE_-UUElrZS5Z/view?usp=sharing" target="_blank">CV ↗</a>
+    <a class="nav-resume" href="https://drive.google.com/file/d/14yJyU3QFdm2GrNdi3NBfVt2VS35pcwdr/view?usp=drive_link" target="_blank">CV ↗</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -643,7 +644,7 @@
         </p>
         <p>
           I hold an M.Tech in Signal Processing and Machine Learning from <strong>IIT Kharagpur</strong>, where my 
-          thesis developed a deep neural network-based codec for versatile image and video I-frame compression under the supervision of <a href="https://www.iitkgp.ac.in/department/EE/faculty/ee-debdoot" target="_blank" style="color:var(--accent);">Dr. Debdoot Sheet</a>. 
+          thesis developed a deep neural network-based codec for versatile image and video I-frame compression. 
           Prior to that, I completed a B.Tech in Electronics and Communication Engineering from 
           <strong>Heritage Institute of Technology, Kolkata</strong>. My background spans convolutional neural 
           networks, generative models, digital image processing, and learned compression.
@@ -681,7 +682,9 @@
     </div>
 
     <div class="edu-item reveal">
-      <div class="edu-logo-placeholder"><i class="fas fa-university"></i></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/University_of_Colorado_Boulder_seal.svg/200px-University_of_Colorado_Boulder_seal.svg.png" alt="CU Boulder" class="edu-logo"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="edu-logo-placeholder" style="display:none"><i class="fas fa-university"></i></div>
       <div class="edu-info">
         <h3><a href="https://www.colorado.edu/" target="_blank">University of Colorado Boulder</a></h3>
         <p class="edu-degree">PhD in Electrical, Computer and Energy Engineering</p>
@@ -717,7 +720,8 @@
           </ul>
         </div>
         <div class="thesis-note">
-          <strong>Thesis:</strong> Deep Neural Network based Codec for Versatile Image and Video I-frame Compression
+          <strong>Thesis:</strong> Deep Neural Network based Codec for Versatile Image and Video I-frame Compression<br>
+          <strong>Advisor:</strong> <a href="https://debdootsheet.github.io/" target="_blank" style="color:var(--accent);text-decoration:none;">Dr. Debdoot Sheet</a>
         </div>
       </div>
     </div>
@@ -812,10 +816,36 @@
   </section>
   </div>
 
+  <!-- WORK EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-header reveal">
+      <span class="section-number">04</span>
+      <h2 class="section-title-text">Work Experience</h2>
+    </div>
+
+    <div class="intern-item reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
+        <div>
+          <a class="intern-org" href="https://www.qualcomm.com/" target="_blank">Qualcomm India</a>
+          <span style="font-size:0.9rem;color:var(--ink-light);margin-left:0.6rem;">— Engineer, AI Camera Team</span>
+        </div>
+        <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--ink-muted);letter-spacing:0.06em;white-space:nowrap;">
+          <i class="fas fa-map-marker-alt" style="color:var(--accent);font-size:0.7rem;"></i> Hyderabad, India
+        </span>
+      </div>
+      <p class="intern-period">July 2024 — July 2025</p>
+      <ul class="intern-bullets">
+        <li>Deployed bit-exact deep neural model translation techniques, ensuring platform and pipeline independence.</li>
+        <li>Built a quantitative analysis pipeline for images that reduced the time to quantify image quality on a large dataset from <strong>23 hours to 3 hours</strong>.</li>
+        <li>Led the development of an application to ensure the stability of deep neural models on edge devices.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- RESEARCH -->
   <section id="research" class="section">
     <div class="section-header reveal">
-      <span class="section-number">04</span>
+      <span class="section-number">05</span>
       <h2 class="section-title-text">Research</h2>
     </div>
     <div class="research-grid">
@@ -850,7 +880,13 @@
           <span class="research-tag">Rate-Distortion</span>
           <span class="research-tag">PyTorch</span>
         </div>
-        <div class="venue">M.Tech Thesis · IIT Kharagpur, 2022–2024</div>
+        <div class="venue">
+          M.Tech Thesis · IIT Kharagpur, 2022–2024 · Advisor: Dr. Debdoot Sheet<br>
+          <span style="margin-top:0.4rem;display:inline-flex;align-items:center;gap:0.4rem;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/80px-Intel_logo_%282006-2020%29.svg.png" alt="Intel" style="height:13px;vertical-align:middle;opacity:0.8;">
+            <span>In collaboration with Intel</span>
+          </span>
+        </div>
       </div>
 
       <div class="research-card reveal">
@@ -899,7 +935,7 @@
   <div class="section-alt">
   <section id="projects" class="section">
     <div class="section-header reveal">
-      <span class="section-number">05</span>
+      <span class="section-number">06</span>
       <h2 class="section-title-text">Software Projects</h2>
     </div>
     <div class="projects-grid">
@@ -944,6 +980,98 @@
         </div>
       </div>
 
+      <div class="project-card reveal">
+        <img src="assets/img/projects/american_sign_language.jpg" alt="ASL" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-hand-paper"></i></div>
+        <div class="project-body">
+          <h4>American Sign Language Classifier</h4>
+          <p>CNN-based ASL gesture recognition with data augmentation and TensorFlow/Keras, achieving frame-level hand-sign classification.</p>
+          <div class="project-tags">
+            <span class="project-tag">CNN</span><span class="project-tag">Data Augmentation</span><span class="project-tag">Keras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/rock_paper_scissors.jpg" alt="Rock Paper Scissors" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-hand-rock"></i></div>
+        <div class="project-body">
+          <h4>Rock Paper Scissors Classifier</h4>
+          <p>Deep learning classifier with dropout regularisation and data augmentation to recognise hand gestures in real time.</p>
+          <div class="project-tags">
+            <span class="project-tag">TensorFlow</span><span class="project-tag">Dropout</span><span class="project-tag">Augmentation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/classification.jpg" alt="Cats vs Dogs" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-paw"></i></div>
+        <div class="project-body">
+          <h4>Cats vs Dogs Classifier</h4>
+          <p>Transfer learning using pre-trained InceptionV3 with data augmentation and dropout regularisation for binary image classification.</p>
+          <div class="project-tags">
+            <span class="project-tag">Transfer Learning</span><span class="project-tag">InceptionV3</span><span class="project-tag">Keras</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAN Projects -->
+      <div class="project-card reveal">
+        <img src="assets/img/projects/gan.jpg" alt="GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-project-diagram"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — Vanilla GAN</h4>
+          <p>Generative Adversarial Network with Generator/Discriminator pair, batch normalisation, and transpose convolution for MNIST digit synthesis.</p>
+          <div class="project-tags">
+            <span class="project-tag">GAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Generative</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/dc_gan.jpg" alt="DC-GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-layer-group"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — DC-GAN</h4>
+          <p>Deep Convolutional GAN using transpose convolution, batch normalisation and a deep discriminator architecture for improved image fidelity.</p>
+          <div class="project-tags">
+            <span class="project-tag">DCGAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Conv</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/c_gan.jpg" alt="C-GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-sliders-h"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — Conditional GAN</h4>
+          <p>C-GAN conditioned on class labels for targeted digit generation; uses batch norm, transpose convolution, and class-conditional discriminator.</p>
+          <div class="project-tags">
+            <span class="project-tag">C-GAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Conditional</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/w_gan.jpg" alt="W-GAN" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-wave-square"></i></div>
+        <div class="project-body">
+          <h4>Digit Generation — Wasserstein GAN</h4>
+          <p>W-GAN with gradient penalty to prevent mode collapse; uses Wasserstein loss and a Critic network instead of a traditional discriminator.</p>
+          <div class="project-tags">
+            <span class="project-tag">WGAN</span><span class="project-tag">PyTorch</span><span class="project-tag">Gradient Penalty</span>
+          </div>
+        </div>
+      </div>
+
       <!-- NLP Projects -->
       <div class="project-card reveal">
         <img src="assets/img/projects/summary.webp" alt="Text Summariser" class="project-img"
@@ -957,6 +1085,19 @@
           </div>
           <div style="margin-top:0.6rem;">
             <a href="https://github.com/PragyadiptaAdhya/Extractive_Text_Summariser" target="_blank" style="font-size:0.75rem;color:var(--accent);text-decoration:none;border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:2px;"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/img/projects/nlp.jpg" alt="Text Classification" class="project-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none"><i class="fas fa-tags"></i></div>
+        <div class="project-body">
+          <h4>Text Classification (NLP)</h4>
+          <p>Sequence classification using word embeddings, tokenisation, and padded sequences, with visualisation via TensorFlow Projector.</p>
+          <div class="project-tags">
+            <span class="project-tag">Word Embeddings</span><span class="project-tag">TensorFlow</span><span class="project-tag">NLP</span>
           </div>
         </div>
       </div>
@@ -982,7 +1123,7 @@
   <!-- SKILLS -->
   <section id="skills" class="section">
     <div class="section-header reveal">
-      <span class="section-number">06</span>
+      <span class="section-number">07</span>
       <h2 class="section-title-text">Skills</h2>
     </div>
     <div class="skills-grid">
@@ -1033,18 +1174,19 @@
   <div class="section-alt">
   <section id="publications" class="section">
     <div class="section-header reveal">
-      <span class="section-number">07</span>
+      <span class="section-number">08</span>
       <h2 class="section-title-text">Publications</h2>
     </div>
 
     <div class="pub-item reveal">
       <div class="pub-num">1</div>
       <div>
-        <p class="pub-title">Printable Graphene-Sustainable Elastomer-Based Cross Talk Free Sensor for Point of Care Diagnostics</p>
-        <p class="pub-authors">Simran Sharma, Muthamil Selvan T, Susmita Naskar, Soumyadeep Mondal, <strong>Pragyadipta Adhya</strong>, et al., Tanmoy Mukhopadhyay, Titash Mondal</p>
-        <p class="pub-venue">ACS Applied Materials & Interfaces</p>
+        <p class="pub-title"><!-- Add your published paper title here -->[Publication Title — Please Update]</p>
+        <p class="pub-authors"><strong>Pragyadipta Adhya</strong>, et al.</p>
+        <p class="pub-venue"><!-- Add venue / journal / conference name and year --></p>
         <div class="pub-actions">
-          <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.2c17805" class="pub-link"><i class="fas fa-external-link-alt"></i> Paper</a>
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> Paper</a>
+          <a href="#" class="pub-link"><i class="fab fa-github"></i> Code</a>
         </div>
       </div>
     </div>
@@ -1067,7 +1209,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="section-header reveal">
-      <span class="section-number">08</span>
+      <span class="section-number">09</span>
       <h2 class="section-title-text">Contact</h2>
     </div>
     <div class="contact-grid">
@@ -1076,7 +1218,7 @@
         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
         <div>
           <h4>Email</h4>
-          <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in">pragyadipta.adhya@colorado.edu</a>
+          <a href="mailto:pragyadipta.adhya@kgpian.iitkgp.ac.in">pragyadipta.adhya@kgpian.iitkgp.ac.in</a>
         </div>
       </div>
 
@@ -1084,7 +1226,7 @@
         <div class="contact-icon"><i class="fas fa-phone"></i></div>
         <div>
           <h4>Phone</h4>
-          <p>+1 (720)-545-8034</p>
+          <p>+91 96413 66903</p>
         </div>
       </div>
 
@@ -1092,7 +1234,7 @@
         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
         <div>
           <h4>Address</h4>
-          <p>Boulder,<br>Colorado — 80303, USA</p>
+          <p>21 Chotobazar, Near Rashmayrar Chawk,<br>Midnapore, West Bengal — 721101, India</p>
         </div>
       </div>
 
