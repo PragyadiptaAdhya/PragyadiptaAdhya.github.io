@@ -314,7 +314,7 @@
     }
     .thesis-note strong { color: var(--ink); font-style: normal; }
 
-    /* ── INTERNSHIPS ── */
+    /* ── INTERNSHIPS & EXPERIENCE ── */
     .intern-item {
       position: relative;
       padding-left: 2rem;
@@ -571,12 +571,12 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="nav-brand" href="#hero">Pragyadipta <span>Adhya</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -589,7 +589,6 @@
     </button>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg-rule"></div>
     <div class="hero-inner">
@@ -618,7 +617,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <div class="section-alt">
   <section id="about" class="section">
     <div class="section-header reveal">
@@ -673,30 +671,12 @@
   </section>
   </div>
 
-  <!-- EDUCATION -->
   <section id="education" class="section">
     <div class="section-header reveal">
       <span class="section-number">02</span>
       <h2 class="section-title-text">Education</h2>
     </div>
 
-    <!-- <div class="edu-item reveal">
-      <div class="edu-logo-placeholder"><i class="fas fa-university"></i></div>
-      <div class="edu-info">
-        <h3><a href="https://www.colorado.edu/" target="_blank">University of Colorado Boulder</a></h3>
-        <p class="edu-degree">PhD in Electrical, Computer and Energy Engineering</p>
-        <p class="edu-period">2025 — Present</p>
-        <div class="edu-courses">
-          <span class="edu-detail">Advisor:</span>
-          <ul>
-            <li><a href="https://www.colorado.edu/ecee/al-bovik" target="_blank" style="color:var(--accent);text-decoration:none;">Prof. Alan C. Bovik</a></li>
-          </ul>
-        </div>
-        <div class="thesis-note" style="border-color:var(--gold);">
-          <strong>Research Focus:</strong> Perceptual quality of images, videos &amp; 3D avatar reconstruction/rendering; chromatic distortions; human visual perception
-        </div>
-      </div>
-    </div> -->
     <div class="edu-item reveal">
       <img src="assets/img/education/cu_logo.png" alt="CU Boulder" class="edu-logo"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -775,7 +755,6 @@
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section class="section" style="padding-top:0;">
     <div class="section-header reveal">
       <span class="section-number" style="color:var(--gold);">✦</span>
@@ -800,12 +779,22 @@
     </div>
   </section>
 
-  <!-- INTERNSHIPS -->
   <div class="section-alt">
-  <section id="internships" class="section">
+  <section id="experience" class="section">
     <div class="section-header reveal">
       <span class="section-number">03</span>
-      <h2 class="section-title-text">Internships</h2>
+      <h2 class="section-title-text">Experience</h2>
+    </div>
+
+    <div class="intern-item reveal">
+      <a class="intern-org" href="https://www.qualcomm.com/" target="_blank">Qualcomm India</a>
+      <div style="font-size: 0.95rem; color: var(--ink-light); font-style: italic; margin-bottom: 0.25rem;">Engineer in AI Camera Team · Hyderabad, India</div>
+      <p class="intern-period">July 2024 — July 2025</p>
+      <ul class="intern-bullets">
+        <li>Deployed bit-exact deep neural model translation techniques, ensuring platform and pipeline independence.</li>
+        <li>Built a quantitative analysis pipeline for images, which reduces the time to quantify image quality on a large dataset from 23 hours to 3 hours.</li>
+        <li>Lead the development of an application to ensure the stability of deep neural models on edge devices.</li>
+      </ul>
     </div>
 
     <div class="intern-item reveal">
@@ -840,7 +829,6 @@
   </section>
   </div>
 
-  <!-- RESEARCH -->
   <section id="research" class="section">
     <div class="section-header reveal">
       <span class="section-number">04</span>
@@ -923,7 +911,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <div class="section-alt">
   <section id="projects" class="section">
     <div class="section-header reveal">
@@ -932,7 +919,6 @@
     </div>
     <div class="projects-grid">
 
-      <!-- Deep Learning / Vision Projects -->
       <div class="project-card reveal">
         <img src="assets/img/projects/dvic.jpg" alt="DVIC" class="project-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -972,7 +958,6 @@
         </div>
       </div>
 
-      <!-- NLP Projects -->
       <div class="project-card reveal">
         <img src="assets/img/projects/summary.webp" alt="Text Summariser" class="project-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -989,7 +974,6 @@
         </div>
       </div>
 
-      <!-- ML Projects -->
       <div class="project-card reveal">
         <img src="assets/img/projects/insurance.jpg" alt="Insurance Fraud" class="project-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -1007,7 +991,6 @@
   </section>
   </div>
 
-  <!-- SKILLS -->
   <section id="skills" class="section">
     <div class="section-header reveal">
       <span class="section-number">06</span>
@@ -1057,7 +1040,6 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
   <div class="section-alt">
   <section id="publications" class="section">
     <div class="section-header reveal">
@@ -1092,7 +1074,6 @@
   </section>
   </div>
 
-  <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="section-header reveal">
       <span class="section-number">08</span>
@@ -1139,7 +1120,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Pragyadipta Adhya · Built for academic and professional use · <a href="https://github.com/PragyadiptaAdhya" target="_blank">GitHub ↗</a></p>
   </footer>
